@@ -82,7 +82,7 @@ $status = getWorkshopStatus($config['schedule']);
 
             <!-- Right Column: Workshop Highlight Card (Solid, No Glow, Grounded) -->
             <div class="lg:col-span-5">
-                <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 sm:p-7 space-y-5">
+                <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 sm:p-7 space-y-5 max-w-xl mx-auto lg:max-w-none">
                     
                     <!-- Header of Card -->
                     <div class="flex items-center justify-between pb-4 border-b border-slate-200">
