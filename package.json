@@ -1,0 +1,12 @@
+{
+  "name": "landing-page-bengkel-motor",
+  "version": "1.0.0",
+  "description": "Website Landing Page Garasi Prima Motor",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --minify",
+    "watch:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

@@ -10,7 +10,7 @@ if (!function_exists('e')) {
 }
 
 /**
- * Menghitung status operasional bengkel secara real-time
+ * Menghclient status operasional bengkel secara real-time
  * 
  * @param array $schedule Jadwal mingguan dari config.php
  * @return array Status buka/tutup, jam hari ini, dan pesan info
@@ -69,4 +69,76 @@ function getWorkshopStatus(array $schedule): array {
             'next_open'     => 'Buka besok 08:00 WIB',
         ];
     }
+}
+
+/**
+ * Menghasilkan Schema.org JSON-LD structured data (AutoRepair / LocalBusiness)
+ * untuk optimasi SEO lokal Google
+ * 
+ * @param array $config Konfigurasi aplikasi
+ * @return string JSON-LD terformat
+ */
+function getSchemaJsonLd(array $config): string {
+    $dayMap = [
+        1 => 'Monday',
+        2 => 'Tuesday',
+        3 => 'Wednesday',
+        4 => 'Thursday',
+        5 => 'Friday',
+        6 => 'Saturday',
+        7 => 'Sunday'
+    ];
+    
+    $openingHours = [];
+    if (!empty($config['schedule']) && is_array($config['schedule'])) {
+        foreach ($config['schedule'] as $dayNum => $sched) {
+            if (!empty($sched['is_open'])) {
+                $openingHours[] = [
+                    '@type'     => 'OpeningHoursSpecification',
+                    'dayOfWeek' => $dayMap[$dayNum] ?? 'Monday',
+                    'opens'     => $sched['open'] ?? '08:00',
+                    'closes'    => $sched['close'] ?? '17:30'
+                ];
+            }
+        }
+    }
+
+    $phoneRaw = $config['app']['phone_raw'] ?? '081287654321';
+    $formattedIntPhone = '+62' . ltrim($phoneRaw, '0');
+
+    $schema = [
+        '@context'            => 'https://schema.org',
+        '@type'               => 'AutoRepair',
+        'name'                => $config['app']['name'] ?? 'Garasi Prima Motor',
+        'description'         => $config['app']['subtagline'] ?? '',
+        'telephone'           => $formattedIntPhone,
+        'email'               => $config['app']['email'] ?? '',
+        'priceRange'          => 'Rp 15.000 - Rp 180.000',
+        'paymentAccepted'     => 'Cash, QRIS, Transfer Bank',
+        'currenciesAccepted'  => 'IDR',
+        'address'             => [
+            '@type'           => 'PostalAddress',
+            'streetAddress'   => $config['app']['address'] ?? '',
+            'addressLocality' => 'Jakarta Timur',
+            'addressRegion'   => 'DKI Jakarta',
+            'postalCode'      => '13830',
+            'addressCountry'  => 'ID'
+        ],
+        'geo'                 => [
+            '@type'           => 'GeoCoordinates',
+            'latitude'        => -6.2297465,
+            'longitude'       => 106.7891789
+        ],
+        'hasMap'              => $config['app']['google_maps_directions'] ?? '',
+        'openingHoursSpecification' => $openingHours,
+        'aggregateRating'     => [
+            '@type'           => 'AggregateRating',
+            'ratingValue'     => (string)($config['app']['rating'] ?? '4.9'),
+            'reviewCount'     => (string)($config['app']['review_count'] ?? '348'),
+            'bestRating'      => '5',
+            'worstRating'     => '1'
+        ]
+    ];
+
+    return (string)json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 }
