@@ -104,6 +104,22 @@ $status = getWorkshopStatus($config['schedule']);
                         </div>
                     </div>
 
+                    <!-- Workshop Photo with Verification Badge -->
+                    <div class="relative rounded-lg overflow-hidden border border-slate-200 aspect-[16/9] bg-slate-100 shadow-sm group">
+                        <img 
+                            src="<?= e($config['app']['workshop_photo']) ?>" 
+                            alt="Tampak Depan Bengkel <?= e($config['app']['name']) ?>" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            width="600"
+                            height="338"
+                            loading="eager"
+                        >
+                        <div class="absolute bottom-2.5 left-2.5 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-medium px-2.5 py-1 rounded-md flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-400"></i>
+                            <span>Tampak Depan Bengkel & Area Servis</span>
+                        </div>
+                    </div>
+
                     <!-- 4 Highlights Grid (Clean White/Slate) -->
                     <div class="grid grid-cols-2 gap-3">
                         <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">

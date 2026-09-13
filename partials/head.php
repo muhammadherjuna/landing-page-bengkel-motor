@@ -71,4 +71,4 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-600 selection:text-white flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-600 selection:text-white flex flex-col min-h-screen pb-16 sm:pb-0">

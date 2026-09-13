@@ -110,12 +110,24 @@
     </div>
 </footer>
 
+<!-- Mobile Sticky Quick-Action Bar (Active on screens < 640px) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-t border-slate-200 px-4 py-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] flex items-center gap-3 sm:hidden">
+    <a href="<?= e($config['app']['google_maps_directions']) ?>" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 h-11 text-xs gap-2">
+        <i data-lucide="navigation" class="w-4 h-4"></i>
+        <span>Rute Google Maps</span>
+    </a>
+    <a href="<?= e($config['app']['whatsapp_url']) ?>" target="_blank" rel="noopener noreferrer" class="btn-secondary flex-1 h-11 text-xs gap-2 !bg-emerald-50 !border-emerald-300 !text-emerald-800 hover:!bg-emerald-100">
+        <i data-lucide="phone" class="w-4 h-4 text-emerald-600"></i>
+        <span>Chat WhatsApp</span>
+    </a>
+</div>
+
 <!-- Floating Back to Top Button -->
 <button 
     id="back-to-top-btn" 
     type="button" 
     aria-label="Kembali ke atas halaman" 
-    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-lg bg-white border border-slate-300 text-slate-700 shadow-md hover:bg-slate-50 hover:text-slate-900 active:bg-slate-100 flex items-center justify-center transition-all duration-200 opacity-0 translate-y-3 pointer-events-none focus:outline-none focus:ring-2 focus:ring-red-600">
+    class="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-40 w-11 h-11 rounded-lg bg-white border border-slate-300 text-slate-700 shadow-md hover:bg-slate-50 hover:text-slate-900 active:bg-slate-100 flex items-center justify-center transition-all duration-200 opacity-0 translate-y-3 pointer-events-none focus:outline-none focus:ring-2 focus:ring-blue-600">
     <i data-lucide="arrow-up" class="w-5 h-5"></i>
 </button>
 
