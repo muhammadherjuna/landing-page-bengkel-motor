@@ -13,10 +13,11 @@ return [
     // ----------------------------------------------------
     'app' => [
         'name'          => 'Garasi Prima Motor',
-        'tagline'       => 'Bengkel Servis Motor Profesional, Cepat, & Terpercaya',
-        'subtagline'    => 'Solusi perawatan motor matic, bebek, dan sport harian Anda. Pengecekan gratis, harga transparan, pengerjaan jujur di depan mata dan bergaransi.',
-        'phone'         => '(021) 8765-4321',
-        'phone_raw'     => '02187654321', // format untuk tel: link
+        'tagline'       => 'Bengkel Servis Motor Harian & Perawatan Berkala - Jakarta Timur',
+        'subtagline'    => 'Melayani servis rutin, ganti oli, cvt matic, dan perbaikan mesin motor harian Anda. Pengerjaan terbuka di depan mata, biaya transparan, dan boleh bawa sparepart sendiri.',
+        'phone'         => '0812-8765-4321',
+        'phone_raw'     => '081287654321', // format untuk tel: link
+        'whatsapp_url'  => 'https://wa.me/6281287654321',
         'email'         => 'kontak@garasiprimamotor.com',
         'address'       => 'Jl. Raya Otomotif No. 88, RT 03/RW 05, Sukamaju, Jakarta Timur',
         'landmark'      => 'Sebelah SPBU Pertamina 34, 100 meter dari Pasar Sukamaju (Pinggir Jalan Raya)',
