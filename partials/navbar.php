@@ -70,11 +70,7 @@ $status = getWorkshopStatus($config['schedule']);
             </div>
 
             <!-- Mobile Menu Button -->
-            <div class="flex items-center gap-2 lg:hidden">
-                <a href="<?= e($config['app']['google_maps_directions']) ?>" target="_blank" rel="noopener noreferrer" class="btn-primary h-9 px-3 text-xs sm:hidden">
-                    <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
-                    <span>Rute</span>
-                </a>
+            <div class="flex items-center lg:hidden">
                 <button id="mobile-menu-btn" type="button" aria-label="Buka Menu Navigasi" class="p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-600">
                     <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
                 </button>
