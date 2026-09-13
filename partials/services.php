@@ -80,9 +80,13 @@
         </div>
 
         <!-- Footnote note on pricing -->
-        <div class="mt-10 p-4 rounded-xl bg-white border border-slate-200 text-slate-600 text-xs text-center max-w-2xl mx-auto flex items-center justify-center gap-2">
-            <i data-lucide="info" class="w-4 h-4 text-blue-600 flex-shrink-0"></i>
-            <span><strong>Catatan:</strong> Tarif di atas adalah biaya jasa pengerjaan. Jika diperlukan penggantian oli atau sparepart, mekanik akan selalu mengonfirmasikan pilihan dan harga kepada Anda terlebih dahulu.</span>
+        <div class="mt-10 p-4 sm:p-5 rounded-xl bg-white border border-slate-200 text-slate-600 text-xs sm:text-sm max-w-3xl mx-auto flex items-start gap-3.5 shadow-xs">
+            <div class="w-6 h-6 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center flex-shrink-0 mt-0.5 border border-blue-100">
+                <i data-lucide="info" class="w-4 h-4"></i>
+            </div>
+            <p class="leading-relaxed text-slate-600 text-left text-xs sm:text-sm">
+                <strong class="text-slate-900 font-bold">Catatan:</strong> Tarif di atas adalah biaya jasa pengerjaan. Jika diperlukan penggantian oli atau sparepart, mekanik akan selalu mengonfirmasikan pilihan dan harga kepada Anda terlebih dahulu.
+            </p>
         </div>
 
     </div>
