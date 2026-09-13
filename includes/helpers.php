@@ -10,7 +10,52 @@ if (!function_exists('e')) {
 }
 
 /**
- * Menghclient status operasional bengkel secara real-time
+ * Terapkan HTTP Security Headers via PHP
+ * Berfungsi sebagai fallback jika .htaccess mod_headers tidak tersedia
+ * (misal: Nginx, shared hosting tanpa mod_headers)
+ */
+function applySecurityHeaders(): void {
+    if (headers_sent()) return;
+
+    // Sembunyikan PHP versi dari response header
+    header_remove('X-Powered-By');
+
+    // Cegah Clickjacking
+    header('X-Frame-Options: SAMEORIGIN');
+
+    // Cegah MIME Sniffing
+    header('X-Content-Type-Options: nosniff');
+
+    // XSS Protection (browser lama)
+    header('X-XSS-Protection: 1; mode=block');
+
+    // Referrer Policy
+    header('Referrer-Policy: strict-origin-when-cross-origin');
+
+    // Permissions Policy
+    header('Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()');
+
+    // Content Security Policy
+    $csp  = "default-src 'self'; ";
+    $csp .= "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com; ";
+    $csp .= "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; ";
+    $csp .= "font-src 'self' https://fonts.gstatic.com; ";
+    $csp .= "img-src 'self' data: https:; ";
+    $csp .= "frame-src https://www.google.com; ";
+    $csp .= "connect-src 'self'; ";
+    $csp .= "object-src 'none'; ";
+    $csp .= "base-uri 'self'; ";
+    $csp .= "form-action 'self';";
+    header("Content-Security-Policy: {$csp}");
+
+    // Matikan tampilan error PHP ke publik (tampilkan error hanya di log)
+    ini_set('display_errors', '0');
+    ini_set('display_startup_errors', '0');
+    error_reporting(E_ALL); // Tetap log semua error, tapi tidak tampil ke user
+}
+
+/**
+ * Menghitung status operasional bengkel secara real-time
  * 
  * @param array $schedule Jadwal mingguan dari config.php
  * @return array Status buka/tutup, jam hari ini, dan pesan info

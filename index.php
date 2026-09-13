@@ -10,6 +10,9 @@ $config = require __DIR__ . '/config.php';
 // Muat fungsi pembantu (helpers)
 require_once __DIR__ . '/includes/helpers.php';
 
+// Terapkan HTTP Security Headers (sebelum output HTML apapun)
+applySecurityHeaders();
+
 // 1. Head (HTML Start, Meta Tags, Tailwind, Font, Lucide Icons)
 require_once __DIR__ . '/partials/head.php';
 

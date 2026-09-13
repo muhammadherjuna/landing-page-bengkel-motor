@@ -65,8 +65,8 @@
         }
     </script>
     
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Lucide Icons (versi di-pin untuk keamanan supply chain) -->
+    <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css">

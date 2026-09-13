@@ -1,0 +1,103 @@
+﻿# ============================================================
+# Garasi Prima Motor - Apache Security Configuration
+# ============================================================
+
+# ----------------------------------------------------------
+# 1. HTTP Security Headers
+# ----------------------------------------------------------
+<IfModule mod_headers.c>
+    # Cegah Clickjacking: halaman tidak bisa di-embed di iframe situs lain
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Cegah MIME Sniffing: browser wajib ikuti Content-Type yang dikirim server
+    Header always set X-Content-Type-Options "nosniff"
+
+    # XSS Protection (untuk browser lama yang tidak support CSP)
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Referrer Policy: kirim referer hanya ke origin yang sama (lindungi URL sensitif)
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions Policy: blokir akses fitur browser yang tidak dipakai
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+
+    # Content Security Policy (CSP): whitelist sumber resource yang diizinkan
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';"
+
+    # Sembunyikan versi PHP dari header response
+    Header always unset X-Powered-By
+    Header unset X-Powered-By
+</IfModule>
+
+# ----------------------------------------------------------
+# 2. Sembunyikan Versi Apache & Signature Server
+# ----------------------------------------------------------
+ServerSignature Off
+
+# ----------------------------------------------------------
+# 3. Lindungi File Sensitif dari Akses Publik
+# ----------------------------------------------------------
+<FilesMatch "^(config\.php|\.env|composer\.json|composer\.lock|package\.json|package-lock\.json|tailwind\.config\.js|README\.md|\.gitignore)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Blokir akses ke direktori includes/ dan partials/
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Blokir akses langsung ke includes/ dan partials/
+    RewriteRule ^(includes|partials)/ - [F,L]
+
+    # Blokir akses ke file .htaccess itu sendiri
+    RewriteRule ^\.htaccess$ - [F,L]
+</IfModule>
+
+# ----------------------------------------------------------
+# 4. Cegah Directory Listing (jangan tampilkan isi folder)
+# ----------------------------------------------------------
+Options -Indexes
+
+# ----------------------------------------------------------
+# 5. Cegah Hotlinking Gambar (situs lain mencuri bandwidth kita)
+# ----------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_REFERER} !^$
+    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?localhost [NC]
+    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?garasiprimamotor\.com [NC]
+    RewriteRule \.(webp|jpg|jpeg|png|gif|svg)$ - [F,NC]
+</IfModule>
+
+# ----------------------------------------------------------
+# 6. Force HTTPS (aktifkan jika sudah pakai SSL/domain real)
+# ----------------------------------------------------------
+# <IfModule mod_rewrite.c>
+#     RewriteCond %{HTTPS} off
+#     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# ----------------------------------------------------------
+# 7. Cache Control untuk Aset Statis
+# ----------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/json "access plus 0 seconds"
+</IfModule>
+
+# ----------------------------------------------------------
+# 8. Kompres Respons (Gzip)
+# ----------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json text/xml
+</IfModule>
