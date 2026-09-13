@@ -20,33 +20,9 @@ Website landing page modern, bersih, profesional, dan responsif untuk usaha beng
 
 ---
 
-## 📁 Struktur File & Folder
+## 📁 Arsitektur
 
-```
-landing-page-bengkel-motor/
-├── config.php                 # Konfigurasi data bengkel (nama, kontak 08xx, jam, layanan, ulasan, FAQ, peta)
-├── index.php                  # Halaman utama yang memuat partials
-├── README.md                  # Panduan penggunaan dan kustomisasi
-├── includes/
-│   └── helpers.php            # Logika perhitungan status buka/tutup & keamanan output
-├── partials/
-│   ├── head.php               # Header HTML, meta SEO, Tailwind, Google Fonts
-│   ├── navbar.php             # Navigasi atas terang, logo, live badge, menu mobile
-│   ├── hero.php               # Headline fungsional, tombol standar, kartu keunggulan
-│   ├── features.php           # 6 Keunggulan bengkel
-│   ├── services.php           # Katalog layanan & estimasi biaya jasa
-│   ├── workflow.php           # Alur 4 langkah servis transparan
-│   ├── facilities.php         # Komitmen kejujuran bengkel & pembayaran QRIS/Tunai
-│   ├── testimonials.php       # Seksi ulasan & testimoni Google Review pelanggan
-│   ├── faq.php                # Accordion FAQ interaktif
-│   ├── location.php           # Peta Google Maps interaktif & jadwal mingguan
-│   └── footer.php             # Clean light footer, floating back-to-top, copyright
-└── assets/
-    ├── css/
-    │   └── custom.css         # Styling kustom & sistem tombol .btn-primary / .btn-secondary
-    └── js/
-        └── main.js            # Interaksi FAQ, mobile menu, floating button, & sticky navbar
-```
+Proyek ini menggunakan arsitektur **PHP Native Modular** dengan pemisahan konfigurasi (`config.php`), logika (`includes/`), tampilan (`partials/`), dan aset statis (`assets/`). Semua data bengkel cukup diubah di satu file `config.php`.
 
 ---
 

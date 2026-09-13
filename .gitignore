@@ -1,16 +1,44 @@
 # OS generated files
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Editor & IDE files
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Environment & secret files (JANGAN commit ke repository)
+.env
+.env.*
+*.secret
+
+# Database dumps
+*.sql
+*.sql.gz
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Node modules (jika pakai npm/Tailwind CLI)
+node_modules/
 
 # Log files
 *.log
+error_log
+php_errors.log
 
 # Temp files
 *.tmp
 *.temp
+
+# Compiled / build output
+dist/
+build/
+assets/css/output.css

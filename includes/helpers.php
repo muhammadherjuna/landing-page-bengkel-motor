@@ -10,6 +10,31 @@ if (!function_exists('e')) {
 }
 
 /**
+ * Validasi dan sanitasi URL — hanya izinkan http:// dan https://
+ * Mencegah serangan javascript:, data:, atau vbscript: pada atribut href/src
+ *
+ * @param string $url URL yang akan divalidasi
+ * @param string $fallback URL fallback jika gagal validasi
+ * @return string URL yang sudah di-escape dan aman
+ */
+function safeUrl(string $url, string $fallback = '#'): string {
+    $url = trim($url);
+    if (empty($url)) return e($fallback);
+
+    // Hanya izinkan scheme https:// dan http://
+    if (!preg_match('#^https?://#i', $url)) {
+        return e($fallback);
+    }
+
+    // Validasi format URL dasar
+    if (filter_var($url, FILTER_VALIDATE_URL) === false) {
+        return e($fallback);
+    }
+
+    return e($url);
+}
+
+/**
  * Terapkan HTTP Security Headers via PHP
  * Berfungsi sebagai fallback jika .htaccess mod_headers tidak tersedia
  * (misal: Nginx, shared hosting tanpa mod_headers)

@@ -103,7 +103,7 @@ $currentDayNum = (int)(new DateTime('now', new DateTimeZone('Asia/Jakarta')))->f
                     <!-- Map Wrapper -->
                     <div class="relative w-full h-[380px] sm:h-[440px] rounded-lg overflow-hidden bg-slate-100 border border-slate-200">
                         <iframe 
-                            src="<?= e($config['app']['google_maps_embed']) ?>" 
+                            src="<?= safeUrl($config['app']['google_maps_embed']) ?>" 
                             width="100%" 
                             height="100%" 
                             style="border:0;" 

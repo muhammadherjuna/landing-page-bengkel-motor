@@ -1,0 +1,15 @@
+﻿# Garasi Prima Motor - Robots.txt
+# Mengatur akses crawler/bot mesin pencari
+
+User-agent: *
+Allow: /
+
+# Blokir akses bot ke file backend dan konfigurasi
+Disallow: /includes/
+Disallow: /partials/
+Disallow: /config.php
+Disallow: /.htaccess
+Disallow: /.env
+
+# Sitemap (aktifkan jika sudah deploy ke domain real)
+# Sitemap: https://www.garasiprimamotor.com/sitemap.xml
