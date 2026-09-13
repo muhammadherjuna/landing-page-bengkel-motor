@@ -101,19 +101,22 @@
 
         </div>
 
-        <!-- Copyright & Back to Top -->
+        <!-- Copyright Line -->
         <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
             <p>© <?= date('Y') ?> <?= e($config['app']['name']) ?>. Seluruh Hak Cipta Dilindungi.</p>
-            <div class="flex items-center gap-4">
-                <span>Bengkel Servis Motor Profesional</span>
-                <a href="#beranda" class="inline-flex items-center gap-1 text-slate-600 hover:text-slate-900 transition-colors font-medium">
-                    <span>Ke Atas</span>
-                    <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
-                </a>
-            </div>
+            <p>Bengkel Servis Motor Profesional</p>
         </div>
     </div>
 </footer>
+
+<!-- Floating Back to Top Button -->
+<button 
+    id="back-to-top-btn" 
+    type="button" 
+    aria-label="Kembali ke atas halaman" 
+    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-lg bg-white border border-slate-300 text-slate-700 shadow-md hover:bg-slate-50 hover:text-slate-900 active:bg-slate-100 flex items-center justify-center transition-all duration-200 opacity-0 translate-y-3 pointer-events-none focus:outline-none focus:ring-2 focus:ring-red-600">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+</button>
 
 <!-- Initialize Lucide Icons -->
 <script>

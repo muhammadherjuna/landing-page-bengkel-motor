@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (otherContent) otherContent.classList.add('hidden');
                     if (otherIcon) {
-                        otherIcon.classList.remove('rotate-180', 'text-brand-600');
+                        otherIcon.classList.remove('rotate-180', 'text-blue-700');
                     }
                     if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
                 });
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!isCurrentlyOpen) {
                     content.classList.remove('hidden');
                     if (icon) {
-                        icon.classList.add('rotate-180', 'text-brand-600');
+                        icon.classList.add('rotate-180', 'text-blue-700');
                     }
                     toggle.setAttribute('aria-expanded', 'true');
                 }
@@ -85,11 +85,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Navbar Sticky Shadow on Scroll
     // ----------------------------------------------------
     const header = document.querySelector('header');
+    const backToTopBtn = document.getElementById('back-to-top-btn');
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-            header.classList.add('shadow-md');
-        } else {
-            header.classList.remove('shadow-md');
+        // Sticky Header Shadow
+        if (header) {
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-xs');
+            } else {
+                header.classList.remove('shadow-xs');
+            }
+        }
+
+        // Floating Back to Top Button Visibility
+        if (backToTopBtn) {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.remove('opacity-0', 'translate-y-3', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'translate-y-3', 'pointer-events-none');
+                backToTopBtn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            }
         }
     });
+
+    // ----------------------------------------------------
+    // 4. Back to Top Click Handler
+    // ----------------------------------------------------
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
