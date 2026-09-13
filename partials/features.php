@@ -4,7 +4,7 @@
         <!-- Section Title -->
         <div class="text-center max-w-3xl mx-auto space-y-3 mb-14">
             <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-blue-50 text-blue-800 text-xs font-bold uppercase tracking-wider">
-                <i data-lucide="check-shield" class="w-3.5 h-3.5 text-blue-700"></i>
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-blue-700"></i>
                 <span>Komitmen Kualitas</span>
             </div>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
