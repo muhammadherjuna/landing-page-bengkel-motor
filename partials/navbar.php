@@ -56,6 +56,7 @@ $status = getWorkshopStatus($config['schedule']);
                 <a href="#layanan" class="px-3 py-2 rounded-md hover:text-blue-700 hover:bg-slate-100 transition-colors">Layanan & Biaya</a>
                 <a href="#alur-servis" class="px-3 py-2 rounded-md hover:text-blue-700 hover:bg-slate-100 transition-colors">Alur Servis</a>
                 <a href="#komitmen-jujur" class="px-3 py-2 rounded-md hover:text-blue-700 hover:bg-slate-100 transition-colors">Kejujuran Servis</a>
+                <a href="#testimoni" class="px-3 py-2 rounded-md hover:text-blue-700 hover:bg-slate-100 transition-colors">Ulasan</a>
                 <a href="#faq" class="px-3 py-2 rounded-md hover:text-blue-700 hover:bg-slate-100 transition-colors">FAQ</a>
                 <a href="#lokasi" class="px-3 py-2 rounded-md hover:text-blue-700 hover:bg-slate-100 transition-colors">Lokasi & Jam</a>
             </nav>
@@ -90,6 +91,7 @@ $status = getWorkshopStatus($config['schedule']);
             <a href="#layanan" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-100 hover:text-blue-700">Paket & Layanan</a>
             <a href="#alur-servis" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-100 hover:text-blue-700">Alur 4 Langkah Servis</a>
             <a href="#komitmen-jujur" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-100 hover:text-blue-700">Kejujuran Servis</a>
+            <a href="#testimoni" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-100 hover:text-blue-700">Ulasan Google Review</a>
             <a href="#faq" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-100 hover:text-blue-700">Tanya Jawab (FAQ)</a>
             <a href="#lokasi" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-100 hover:text-blue-700">Lokasi & Jadwal Jam Buka</a>
             

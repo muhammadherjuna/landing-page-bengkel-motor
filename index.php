@@ -34,15 +34,18 @@ require_once __DIR__ . '/partials/navbar.php';
     // 7. Komitmen Kejujuran Servis & Fleksibilitas Pelanggan
     require_once __DIR__ . '/partials/facilities.php';
 
-    // 8. Tanya Jawab (FAQ) Interaktif
+    // 8. Testimoni & Ulasan Nyata Google Review Pelanggan
+    require_once __DIR__ . '/partials/testimonials.php';
+
+    // 9. Tanya Jawab (FAQ) Interaktif
     require_once __DIR__ . '/partials/faq.php';
 
-    // 9. Lokasi Bengkel, Google Maps Interaktif & Jadwal Lengkap
+    // 10. Lokasi Bengkel, Google Maps Interaktif & Jadwal Lengkap
     require_once __DIR__ . '/partials/location.php';
     ?>
 </main>
 
 <?php
-// 10. Pre-footer CTA, Footer & Scripts Initializer
+// 11. Footer & Floating Back-to-Top
 require_once __DIR__ . '/partials/footer.php';
 ?>

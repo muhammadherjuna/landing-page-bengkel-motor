@@ -242,6 +242,33 @@ return [
     ],
 
     // ----------------------------------------------------
+    // ULASAN & TESTIMONI GOOGLE REVIEW PELANGGAN
+    // ----------------------------------------------------
+    'testimonials' => [
+        [
+            'name'       => 'Rizky Pratama',
+            'vehicle'    => 'Honda Vario 150',
+            'rating'     => 5,
+            'time_ago'   => '1 minggu lalu',
+            'review'     => 'Gredek di CVT Vario saya yang udah berbulan-bulan akhirnya sembuh total di sini. Pengerjaan bisa ditunggu dan dilihat langsung, mekaniknya jelasin bagian mana yang aus tanpa maksa ganti part yang masih bagus. Recommended!',
+        ],
+        [
+            'name'       => 'Budi Santoso',
+            'vehicle'    => 'Yamaha NMAX 155',
+            'rating'     => 5,
+            'time_ago'   => '3 minggu lalu',
+            'review'     => 'Ganti oli sama servis rem cepet banget, gak pake antre berjam-jam. Part bekas kampas rem lama dikasih balik ke saya. Pembayaran bisa pakai QRIS jadi praktis gak perlu cari ATM.',
+        ],
+        [
+            'name'       => 'Dimas Ardiansyah',
+            'vehicle'    => 'Honda Beat FI',
+            'rating'     => 5,
+            'time_ago'   => '1 bulan lalu',
+            'review'     => 'Motor sempat brebet di jalan, dibawa ke sini langsung dicek scanner injeksi dan ketemu sensornya kotor. Biayanya sangat masuk akal dan dijelasin di awal sebelum dibongkar. Bengkel jujur!',
+        ],
+    ],
+
+    // ----------------------------------------------------
     // FAQ (FREQUENTLY ASKED QUESTIONS)
     // ----------------------------------------------------
     'faqs' => [

@@ -40,6 +40,7 @@
                     <li><a href="#layanan" class="hover:text-blue-700 transition-colors">Layanan & Biaya</a></li>
                     <li><a href="#alur-servis" class="hover:text-blue-700 transition-colors">Alur Servis</a></li>
                     <li><a href="#komitmen-jujur" class="hover:text-blue-700 transition-colors">Kejujuran Servis</a></li>
+                    <li><a href="#testimoni" class="hover:text-blue-700 transition-colors">Ulasan Pelanggan</a></li>
                     <li><a href="#faq" class="hover:text-blue-700 transition-colors">Tanya Jawab FAQ</a></li>
                     <li><a href="#lokasi" class="hover:text-blue-700 transition-colors">Lokasi & Peta</a></li>
                 </ul>
