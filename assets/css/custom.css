@@ -36,10 +36,13 @@ a:focus-visible, button:focus-visible {
     justify-content: center;
     gap: 0.5rem;
     height: 2.75rem; /* 44px */
+    min-height: 2.75rem; /* 44px */
+    flex-shrink: 0;
+    box-sizing: border-box;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     border-radius: 0.5rem; /* rounded-lg (8px) */
-    background-color: #dc2626; /* red-600 */
+    background-color: #2563eb; /* brand blue */
     color: #ffffff;
     font-weight: 600;
     font-size: 0.875rem; /* 14px */
@@ -51,11 +54,11 @@ a:focus-visible, button:focus-visible {
 }
 
 .btn-primary:hover {
-    background-color: #b91c1c; /* red-700 */
+    background-color: #1d4ed8; /* blue-700 */
 }
 
 .btn-primary:active {
-    background-color: #991b1b; /* red-800 */
+    background-color: #1e40af; /* blue-800 */
 }
 
 .btn-secondary {
@@ -64,6 +67,9 @@ a:focus-visible, button:focus-visible {
     justify-content: center;
     gap: 0.5rem;
     height: 2.75rem; /* 44px */
+    min-height: 2.75rem; /* 44px */
+    flex-shrink: 0;
+    box-sizing: border-box;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     border-radius: 0.5rem; /* rounded-lg (8px) */

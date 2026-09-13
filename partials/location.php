@@ -46,11 +46,11 @@ $currentDayNum = (int)(new DateTime('now', new DateTimeZone('Asia/Jakarta')))->f
 
                     <!-- Standardized Action Buttons -->
                     <div class="pt-2 flex flex-col sm:flex-row gap-3">
-                        <a href="<?= e($config['app']['google_maps_directions']) ?>" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1">
+                        <a href="<?= e($config['app']['google_maps_directions']) ?>" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:flex-1">
                             <i data-lucide="navigation" class="w-4 h-4"></i>
                             <span>Buka Navigasi Rute</span>
                         </a>
-                        <a href="<?= e($config['app']['whatsapp_url']) ?>" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                        <a href="<?= e($config['app']['whatsapp_url']) ?>" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full sm:flex-1">
                             <i data-lucide="phone" class="w-4 h-4 text-emerald-600"></i>
                             <span>WhatsApp</span>
                         </a>
