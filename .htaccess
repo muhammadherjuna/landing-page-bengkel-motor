@@ -1,4 +1,4 @@
-﻿# ============================================================
+# ============================================================
 # Garasi Prima Motor - Apache Security Configuration
 # ============================================================
 
@@ -22,7 +22,7 @@
     Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
 
     # Content Security Policy (CSP): whitelist sumber resource yang diizinkan
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://unpkg.com; object-src 'none'; base-uri 'self'; form-action 'self';"
 
     # Sembunyikan versi PHP dari header response
     Header always unset X-Powered-By

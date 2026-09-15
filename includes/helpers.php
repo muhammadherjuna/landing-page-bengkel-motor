@@ -67,7 +67,7 @@ function applySecurityHeaders(): void {
     $csp .= "font-src 'self' https://fonts.gstatic.com; ";
     $csp .= "img-src 'self' data: https:; ";
     $csp .= "frame-src https://www.google.com; ";
-    $csp .= "connect-src 'self'; ";
+    $csp .= "connect-src 'self' https://unpkg.com; ";
     $csp .= "object-src 'none'; ";
     $csp .= "base-uri 'self'; ";
     $csp .= "form-action 'self';";
