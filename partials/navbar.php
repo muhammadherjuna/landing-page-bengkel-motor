@@ -72,7 +72,8 @@ $status = getWorkshopStatus($config['schedule']);
             <!-- Mobile & Tablet Hamburger Button (< 1200px) -->
             <div class="flex items-center xl:hidden">
                 <button id="mobile-menu-btn" type="button" aria-label="Buka Menu Navigasi" class="p-2.5 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-600">
-                    <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+                    <i id="menu-icon-open" data-lucide="menu" class="w-6 h-6"></i>
+                    <i id="menu-icon-close" data-lucide="x" class="w-6 h-6 hidden"></i>
                 </button>
             </div>
 

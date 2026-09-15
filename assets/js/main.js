@@ -9,23 +9,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // ----------------------------------------------------
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
 
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
             const isHidden = mobileMenu.classList.contains('hidden');
             if (isHidden) {
                 mobileMenu.classList.remove('hidden');
-                if (menuIcon) {
-                    menuIcon.setAttribute('data-lucide', 'x');
-                    lucide.createIcons();
-                }
+                if (menuIconOpen) menuIconOpen.classList.add('hidden');
+                if (menuIconClose) menuIconClose.classList.remove('hidden');
             } else {
                 mobileMenu.classList.add('hidden');
-                if (menuIcon) {
-                    menuIcon.setAttribute('data-lucide', 'menu');
-                    lucide.createIcons();
-                }
+                if (menuIconOpen) menuIconOpen.classList.remove('hidden');
+                if (menuIconClose) menuIconClose.classList.add('hidden');
             }
         });
 
@@ -34,10 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
-                if (menuIcon) {
-                    menuIcon.setAttribute('data-lucide', 'menu');
-                    lucide.createIcons();
-                }
+                if (menuIconOpen) menuIconOpen.classList.remove('hidden');
+                if (menuIconClose) menuIconClose.classList.add('hidden');
             });
         });
     }
